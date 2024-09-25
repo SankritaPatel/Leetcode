@@ -11,11 +11,10 @@ jobs:
 
     steps:
       - name: Sync
-        uses: joshcai/leetcode-sync@v1.5
+        uses: joshcai/leetcode-sync@latest  # Consider using the latest version
         with:
           github-token: ${{ github.token }}
           leetcode-csrf-token: ${{ secrets.LEETCODE_CSRF_TOKEN }}
           leetcode-session: ${{ secrets.LEETCODE_SESSION }}
           destination-folder: my-folder
-          verbose: true
-          commit-header: '[LeetCode Sync]'
+          filter-duplicate-secs: true  # Optional based on your needs
